@@ -24,7 +24,7 @@ concurrency:
 
 env:
   UPSTREAM: wxxsfxyzm/InstallerX-Revived
-  APP_ID: com.android.packageinstaller
+  APP_ID: com.miui.packageinstaller
   # Added to upstream's versionCode (git commit count). Vendor installers carry their own
   # versionCode (ColorOS 17: 17000001); when two system partitions ship the same package,
   # PackageManager keeps the higher one, so ours has to outrank them.
@@ -172,22 +172,22 @@ jobs:
           OUT=build/module
           rm -rf build && mkdir -p build
           cp -a module "$OUT"
-          DIR="$OUT/system/priv-app/PackageInstaller"
+          DIR="$OUT/product/priv-app/MIUIPackageInstaller"
           mkdir -p "$DIR/oat" "$DIR/lib"
           # Hide any stock odex/libs at this path so they never pair with the replaced APK.
           touch "$DIR/oat/.replace" "$DIR/lib/.replace"
-          cp "${{ steps.apk.outputs.path }}" "$DIR/PackageInstaller.apk"
+          cp "${{ steps.apk.outputs.path }}" "$DIR/MIUIPackageInstaller.apk"
           cat > "$OUT/module.prop" <<EOF
-          id=com.android.packageinstaller
+          id=com.miui.packageinstaller
           name=InstallerX Revived (System)
           version=$TAG
           versionCode=$CODE
           author=wxxsfxyzm (app), ${GITHUB_REPOSITORY_OWNER} (module)
-          description=InstallerX Revived as system PackageInstaller (AOSP layout, $FLAVOR build, auto-synced from upstream)
+          description=InstallerX Revived as system PackageInstaller (MIUI layout, $FLAVOR build, auto-synced from upstream)
           updateJson=https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/main/update.json
           EOF
           sed -i 's/^ *//' "$OUT/module.prop"
-          ZIP="InstallerX-Revived-AOSP-$TAG.zip"
+          ZIP="InstallerX-Revived-MIUI-$TAG.zip"
           (cd "$OUT" && zip -r9 "../$ZIP" .)
           unzip -l "build/$ZIP"
           echo "zip=build/$ZIP" >> "$GITHUB_OUTPUT"
