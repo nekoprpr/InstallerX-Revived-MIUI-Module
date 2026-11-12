@@ -1,6 +1,6 @@
-## 26.11.1f3f2a5
+## 26.11.caccb78
 
-Preview build of upstream [26.11.1f3f2a5](https://github.com/wxxsfxyzm/InstallerX-Revived/releases/tag/26.11.1f3f2a5), APK versionCode 1000001595.
+Preview build of upstream [26.11.caccb78](https://github.com/wxxsfxyzm/InstallerX-Revived/releases/tag/26.11.caccb78), APK versionCode 1000001596.
 
 ---
 
@@ -13,10 +13,10 @@ Preview build of upstream [26.11.1f3f2a5](https://github.com/wxxsfxyzm/Installer
 - We appreciate any feedback!
 
 **更新日志（Changelog）:**
+- fix: prevent crash when switching from Miuix to Material 3 (wxxsfxyzm)
 - i18n: Translations update from Hosted Weblate ([#897](https://github.com/wxxsfxyzm/InstallerX-Revived/pull/897)) (Weblate (bot))
 - feat(ui): add OS4 glass styling to Miuix settings (wxxsfxyzm)
 - fix: respect target user in uninstall requests (wxxsfxyzm)
 - fix(deps): update dependency org.jetbrains.kotlinx:kotlinx-serialization-json to v1.13.0 ([#911](https://github.com/wxxsfxyzm/InstallerX-Revived/pull/911)) (renovate[bot])
-- chore(deps): update gradle to v9.9.1 ([#908](https://github.com/wxxsfxyzm/InstallerX-Revived/pull/908)) (renovate[bot])
 
-**Full Changelog:** [`26.09...26.11.1f3f2a5`](https://github.com/wxxsfxyzm/InstallerX-Revived/compare/26.09...26.11.1f3f2a5)
+**Full Changelog:** [`26.09...26.11.caccb78`](https://github.com/wxxsfxyzm/InstallerX-Revived/compare/26.09...26.11.caccb78)
